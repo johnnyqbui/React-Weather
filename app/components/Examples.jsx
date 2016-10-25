@@ -11,7 +11,10 @@ const React = require('react');
 // Refactored into stateless component
 const Examples = (props) => {
 	return (
-		<h3>Examples</h3>
+		<div>
+			<h3>Examples</h3>
+			<p>Welcome to the Examples page!</p>
+		</div>
 	)
 }
 module.exports = Examples;
