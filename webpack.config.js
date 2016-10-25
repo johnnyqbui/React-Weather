@@ -7,7 +7,7 @@ module.exports = {
 		'./app/app.jsx'
 	],
 	externals: {
-		jquery: 'jQuery'
+		jquery: 'jQuery',
 	},
 	plugins: [
 		new webpack.ProvidePlugin({
@@ -35,13 +35,15 @@ module.exports = {
 	},
 	module: {
 		loaders: [{
+	        test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+	        loader: 'url-loader'
+		},  {
+			test: /\.jsx?$/,
 			loader: 'babel-loader',
 			query: {
-				presets: ['react', 'es2015', 'stage-0']
+				presets: ['react', 'es2015']
 			},
-			test: /\.jsx?$/,
 			exclude: /(node_modules|bower_components)/
 		}]
-	},
-	devtool: 'cheap-module-eval-source-map'
+	}
 }

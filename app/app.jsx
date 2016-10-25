@@ -8,6 +8,8 @@ const Examples = require('Examples');
 
 // Load Foundation
 require('style!css!foundation-sites/dist/foundation.min.css');
+require('style!css!font-awesome/css/font-awesome.min.css');
+
 $(document).foundation();
 
 ReactDOM.render(

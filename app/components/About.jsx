@@ -1,5 +1,4 @@
 const React = require('react');
-
 // const About = React.createClass({
 // 	render: function() {
 // 		return (
@@ -22,11 +21,11 @@ const About = () => {
 				<li>Babel</li>
 				<li><a href="http://openweathermap.org">OpenWeatherMap API</a></li>
 			</ul>
-			<h3 className="text-center">Find me here:</h3>
+			<h3 className="text-center">Find me:</h3>
 			<div className="menu-centered">
 				<ul className="menu">
-					<li><a href="https://github.com/johnnyqbui">Github</a></li>
-					<li><a href="https://codepen.io/jbui/">Codepen</a></li>
+					<a className="fa fa-fw fa-github fa-3x" href="https://github.com/johnnyqbui"></a>
+					<a className="fa fa-fw fa-codepen fa-3x" href="https://codepen.io/jbui/"></a>
 				</ul>
 			</div>
 		</div>
