@@ -27219,7 +27219,13 @@
 
 		onSearch: function onSearch(e) {
 			e.preventDefault();
-			alert('not yet wired');
+			var location = this.refs.search.value;
+			var encodedLocation = encodeURIComponent(location);
+
+			if (location.length > 0) {
+				this.refs.search.value = "";
+				window.location.hash = "#/?location=" + encodedLocation;
+			}
 		},
 
 		render: function render() {
@@ -27278,7 +27284,7 @@
 							React.createElement(
 								'li',
 								null,
-								React.createElement('input', { type: 'search', placeholder: 'Enter Location' })
+								React.createElement('input', { type: 'search', ref: 'search', placeholder: 'Enter Location' })
 							),
 							React.createElement(
 								'li',
@@ -27320,7 +27326,9 @@
 
 			this.setState({
 				isLoading: true,
-				errorMessage: undefined
+				errorMessage: undefined,
+				location: undefined,
+				temp: undefined
 			});
 
 			openWeatherMap.getTemp(location).then(function (temp) {
@@ -27335,6 +27343,30 @@
 					errorMessage: e.message
 				});
 			});
+		},
+
+		componentDidMount: function componentDidMount() {
+			var location = this.props.location.query.location;
+
+			if (location && location.length > 0) {
+				this.handleSearch(location);
+
+				// Remove location url query parameter after search
+				window.location.hash = '#/';
+			}
+		},
+
+		// Whenever component props get updated
+		componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+			console.log(newProps);
+			var location = newProps.location.query.location;
+
+			if (location && location.length > 0) {
+				this.handleSearch(location);
+
+				// Remove location url query parameter after search
+				window.location.hash = '#/';
+			}
 		},
 
 		render: function render() {
