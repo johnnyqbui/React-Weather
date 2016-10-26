@@ -11,7 +11,7 @@ const React = require('react');
 const About = () => {
 	return (
 		<div>
-			<h1 className="text-center">About</h1>
+			<h1 className="text-center page-title">About</h1>
 			<p>My very first React Weather App!</p>
 			<p>Technologies used: </p>
 			<ul>
