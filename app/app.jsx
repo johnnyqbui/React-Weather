@@ -13,7 +13,7 @@ require('style!css!font-awesome/css/font-awesome.min.css');
 $(document).foundation();
 
 //App.css
-require('style!css!applicationStyles');
+require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
 	<Router history={hashHistory}>
