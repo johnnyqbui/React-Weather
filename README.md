@@ -1,7 +1,7 @@
 # React Weather Application
 
 ## Built and packaged with:
-* ES6, React, Redux, Webpack, Express
+* ES6, React, Webpack, Express
 
 ## Tested with:
 * Mocha + Karma
